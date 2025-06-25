@@ -6,10 +6,11 @@ from django.contrib import messages
 from django.utils import timezone
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.conf import settings
-from .models import User, Profile, PasswordResetToken, EmailVerificationToken
+from .models import User, Profile, PasswordResetToken, EmailVerificationToken, NewsletterSubscriber
 import datetime
 from django.urls import reverse
 from django.template.loader import render_to_string
+from django.views.decorators.http import require_POST
 
 def login_view(request):
     if request.method == 'POST':
@@ -168,3 +169,16 @@ def verify_email_view(request, uuid):
     except EmailVerificationToken.DoesNotExist:
         messages.error(request, 'Invalid verification link.')
     return redirect('login')
+
+def newsletter_signup_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        if not email:
+            messages.error(request, 'Please enter a valid email address.')
+            return redirect(request.META.get('HTTP_REFERER', '/'))
+        if NewsletterSubscriber.objects.filter(email=email).exists():
+            messages.info(request, 'You are already subscribed to the newsletter.')
+        else:
+            NewsletterSubscriber.objects.create(email=email)
+            messages.success(request, 'Thank you for subscribing to our newsletter!')
+        return redirect(request.META.get('HTTP_REFERER', '/'))

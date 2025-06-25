@@ -1,7 +1,43 @@
 <!-- filepath: c:\dev\django_project\slumSarathi\templates\footer.html -->
-<footer class="bg-dark text-light py-3 mt-5">
-    <div class="container text-center px-2 px-md-0">
-        <hr class="border-secondary">
-        <p class="mb-0">&copy; {{ year|default:2025 }} <span class="fw-bold">SlumSarathi</span>. All rights reserved.</p>
+<footer class="bg-dark text-light pt-4 pb-2 mt-5 border-top">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 mb-3 mb-md-0 text-center text-md-start">
+                <h5 class="fw-bold mb-2">SlumSarathi</h5>
+                <p class="small mb-0">Empowering Students through resources, events, and services.</p>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0 text-center">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item"><a href="/" class="text-light text-decoration-none">Home</a></li>
+                    {% comment %} <li class="list-inline-item"><a href="/about/" class="text-light text-decoration-none">About</a></li> {% endcomment %}
+                    <li class="list-inline-item"><a href="/events/" class="text-light text-decoration-none">Events</a></li>
+                    <li class="list-inline-item"><a href="/resources/" class="text-light text-decoration-none">Resources</a></li>
+                    <li class="list-inline-item"><a href="/services/" class="text-light text-decoration-none">Services</a></li>
+                    {% comment %} <li class="list-inline-item"><a href="/contact/" class="text-light text-decoration-none">Contact</a></li> {% endcomment %}
+                </ul>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a href="#" class="text-light fs-5 me-2" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-light fs-5 me-2" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-light fs-5 me-2" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-light fs-5" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+                <form method="post" action="{% url 'newsletter_signup' %}" class="mt-3 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
+                    {% csrf_token %}
+                    <input type="email" name="email" class="form-control form-control-sm w-auto" placeholder="Your email" required>
+                    <button type="submit" class="btn btn-primary btn-sm">Sign Up for Newsletter</button>
+                </form>
+               
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+                <p class="mb-1 small">Contact: <a href="mailto:slumsarathi@gmail.com" class="text-light text-decoration-underline">slumsarathi@gmail.com</a></p>
+                <p class="mb-0 small">Baneshwor, Kathmandu</p>
+            </div>
+        </div>
+        <hr class="border-secondary my-3">
+        <div class="row">
+            <div class="col text-center">
+                <p class="mb-0 small">&copy; {{ year|default:2025 }} <span class="fw-bold">SlumSarathi</span>. All rights reserved.</p>
+            </div>
+        </div>
     </div>
 </footer>

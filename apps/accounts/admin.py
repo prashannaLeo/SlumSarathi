@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User, Profile, PasswordResetToken
+from .models import User, Profile, PasswordResetToken, NewsletterSubscriber
 
 class UserAdmin(BaseUserAdmin):
     model = User
@@ -44,6 +44,12 @@ class PasswordResetTokenAdmin(admin.ModelAdmin):
     search_fields = ('user__email', 'token')
     list_filter = ('is_used',)
 
+class NewsletterSubscriberAdmin(admin.ModelAdmin):
+    list_display = ('email', 'created_at')
+    search_fields = ('email',)
+    list_filter = ('created_at',)
+
 admin.site.register(User, UserAdmin)
 admin.site.register(Profile, ProfileAdmin)
 admin.site.register(PasswordResetToken, PasswordResetTokenAdmin)
+admin.site.register(NewsletterSubscriber, NewsletterSubscriberAdmin)
