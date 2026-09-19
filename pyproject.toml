@@ -31,5 +31,9 @@ dev = [
     "workers-runtime-sdk"
 ]
 
+[tool.setuptools]
+packages = ["slumSarathi"]
+
 [tool.setuptools.packages.find]
+where = ["."]
 include = ["slumSarathi*"]
