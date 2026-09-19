@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'urls' if os.environ.get('CLOUDFLARE_BINDING') == 'DB' else 'slumSarathi.urls'
+ROOT_URLCONF = 'urls' if workers_env is not None else 'slumSarathi.urls'
 
 TEMPLATES = [
     {
@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-if os.environ.get('CLOUDFLARE_BINDING') == 'DB':
+if workers_env is not None:
     DATABASES = {
         "default": {
             "ENGINE": "django_cf.db.backends.d1",
