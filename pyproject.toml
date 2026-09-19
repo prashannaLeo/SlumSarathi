@@ -31,6 +31,12 @@ dev = [
     "workers-runtime-sdk"
 ]
 
+[tool.setuptools]
+package-dir = {accounts = "apps/accounts", events = "apps/events", resources = "apps/resources", services = "apps/services"}
+
+[tool.setuptools]
+package-dir = {accounts = "apps/accounts", events = "apps/events", resources = "apps/resources", services = "apps/services"}
+
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["slumSarathi*"]
+include = ["slumSarathi*", "accounts", "events", "resources", "services"]
