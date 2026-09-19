@@ -37,3 +37,6 @@ dev = [
     "workers-py",
     "workers-runtime-sdk"
 ]
+
+[tool.setuptools.packages.find]
+include = ["slumSarathi*"]
