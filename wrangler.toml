@@ -2,3 +2,5 @@ name = "slumsarathi"
 main = "slumSarathi/wsgi.py"
 compatibility_date = "2026-07-17"
 compatibility_flags = ["python_workers"]
+
+find_additional_modules = true
