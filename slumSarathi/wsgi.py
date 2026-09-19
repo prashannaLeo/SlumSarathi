@@ -7,6 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
 """
 
+import importlib.util
 import os
 import sys
 
@@ -17,9 +18,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from django.core.wsgi import get_wsgi_application
+# Preload slumSarathi.settings from file so Django can import it
+# even if the bundler does not preserve the package directory.
+_settings_path = BASE_DIR / 'slumSarathi' / 'settings.py'
+if 'slumSarathi.settings' not in sys.modules and _settings_path.exists():
+    _spec = importlib.util.spec_from_file_location('slumSarathi.settings', _settings_path)
+    _module = importlib.util.module_from_spec(_spec)
+    sys.modules['slumSarathi.settings'] = _module
+    try:
+        _spec.loader.exec_module(_module)
+    except Exception:
+        pass
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'slumSarathi.settings')
+
+from django.core.wsgi import get_wsgi_application
 
 application = get_wsgi_application()
 
