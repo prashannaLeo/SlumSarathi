@@ -1,5 +1,5 @@
 [project]
-name = "slumsarathi"
+name = "slumSarathi"
 version = "0.1.0"
 description = "A Django project on Cloudflare Workers"
 requires-python = ">=3.13"
