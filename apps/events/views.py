@@ -4,7 +4,7 @@ from django.urls import reverse_lazy,reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import JsonResponse
 from django.template.loader import render_to_string
-from apps.events.utils import send_registration_confirmation_email
+from events.utils import send_registration_confirmation_email
 from .models import Event, EventRegistration
 from django.contrib import messages
 from django.http import Http404, HttpRequest
