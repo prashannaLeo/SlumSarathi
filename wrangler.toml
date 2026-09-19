@@ -4,3 +4,9 @@ compatibility_date = "2026-07-17"
 compatibility_flags = ["python_workers"]
 
 find_additional_modules = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "slumsarathi-db"
+database_id = "1a7734f8-a9c8-40f8-80b3-9477ebc09532"
+

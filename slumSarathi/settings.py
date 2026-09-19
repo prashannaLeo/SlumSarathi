@@ -88,16 +88,23 @@ WSGI_APPLICATION = 'wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.environ.get('DB_NAME') or getattr(workers_env, 'DB_NAME', ''),
+#         'USER': os.environ.get('DB_USER') or getattr(workers_env, 'DB_USER', ''),
+#         'PASSWORD': os.environ.get('DB_PASSWORD') or getattr(workers_env, 'DB_PASSWORD', ''),
+#         'HOST': os.environ.get('DB_HOST') or getattr(workers_env, 'DB_HOST', ''),
+#         'PORT': os.environ.get('DB_PORT') or getattr(workers_env, 'DB_PORT', '3306'),
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME') or getattr(workers_env, 'DB_NAME', ''),
-        'USER': os.environ.get('DB_USER') or getattr(workers_env, 'DB_USER', ''),
-        'PASSWORD': os.environ.get('DB_PASSWORD') or getattr(workers_env, 'DB_PASSWORD', ''),
-        'HOST': os.environ.get('DB_HOST') or getattr(workers_env, 'DB_HOST', ''),
-        'PORT': os.environ.get('DB_PORT') or getattr(workers_env, 'DB_PORT', '3306'),
+    "default": {
+        "ENGINE": "django_cf.db.backends.d1",
+        "CLOUDFLARE_BINDING": "DB",
     }
 }
+
 
 
 # Password validation
