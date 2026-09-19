@@ -16,7 +16,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'slumSarathi.settings')
 application = get_wsgi_application()
 
 try:
-    from workers import wsgi
-    Default = wsgi.entrypoint(application)
+    from asgiref.wsgi import WsgiToAsgi
+    Default = WsgiToAsgi(application)
 except Exception:
     pass
