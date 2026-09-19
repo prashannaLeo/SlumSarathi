@@ -3,6 +3,11 @@ import os
 import sys
 from pathlib import Path
 
+try:
+    from workers import env as workers_env
+except Exception:
+    workers_env = None
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -16,10 +21,10 @@ sys.path.insert(0, str(BASE_DIR / 'apps'))
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY') or getattr(workers_env, 'SECRET_KEY', 'dev-insecure-key-change-me')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = env('DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[
     'localhost', '127.0.0.1',
@@ -86,11 +91,11 @@ WSGI_APPLICATION = 'wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'NAME': os.environ.get('DB_NAME') or getattr(workers_env, 'DB_NAME', ''),
+        'USER': os.environ.get('DB_USER') or getattr(workers_env, 'DB_USER', ''),
+        'PASSWORD': os.environ.get('DB_PASSWORD') or getattr(workers_env, 'DB_PASSWORD', ''),
+        'HOST': os.environ.get('DB_HOST') or getattr(workers_env, 'DB_HOST', ''),
+        'PORT': os.environ.get('DB_PORT') or getattr(workers_env, 'DB_PORT', '3306'),
     }
 }
 
@@ -144,13 +149,13 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND =  'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_PORT = env.int('EMAIL_PORT', default=587)
-EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
-EMAIL_USE_TLS =True
-EMAIL_USE_SSL =False
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL') or getattr(workers_env, 'DEFAULT_FROM_EMAIL', '')
+EMAIL_HOST = os.environ.get('EMAIL_HOST') or getattr(workers_env, 'EMAIL_HOST', '')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT') or getattr(workers_env, 'EMAIL_PORT', '587'))
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') or getattr(workers_env, 'EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') or getattr(workers_env, 'EMAIL_HOST_PASSWORD', '')
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 # Celery Configuration
 # CELERY_BROKER_URL = env('CELERY_BROKER_URL', default='redis://localhost:6379/0')
 # CELERY_RESULT_BACKEND = env('CELERY_BROKER_URL', default='redis://localhost:6379/0')
