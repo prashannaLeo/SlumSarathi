@@ -28,9 +28,14 @@ DEBUG = env('DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[
     'localhost', '127.0.0.1',
-    '*.workers.dev', '*.pages.dev',
+    '.workers.dev', '.pages.dev',
 ])
 SITE_DOMAIN = env('SITE_DOMAIN', default='localhost')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.workers.dev',
+    'https://*.pages.dev',
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'urls' if os.environ.get('CLOUDFLARE_BINDING') == 'DB' else 'slumSarathi.urls'
 
 TEMPLATES = [
     {
@@ -88,22 +93,24 @@ WSGI_APPLICATION = 'wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': os.environ.get('DB_NAME') or getattr(workers_env, 'DB_NAME', ''),
-#         'USER': os.environ.get('DB_USER') or getattr(workers_env, 'DB_USER', ''),
-#         'PASSWORD': os.environ.get('DB_PASSWORD') or getattr(workers_env, 'DB_PASSWORD', ''),
-#         'HOST': os.environ.get('DB_HOST') or getattr(workers_env, 'DB_HOST', ''),
-#         'PORT': os.environ.get('DB_PORT') or getattr(workers_env, 'DB_PORT', '3306'),
-#     }
-# }
-DATABASES = {
-    "default": {
-        "ENGINE": "django_cf.db.backends.d1",
-        "CLOUDFLARE_BINDING": "DB",
+if os.environ.get('CLOUDFLARE_BINDING') == 'DB':
+    DATABASES = {
+        "default": {
+            "ENGINE": "django_cf.db.backends.d1",
+            "CLOUDFLARE_BINDING": "DB",
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ.get('DB_NAME') or getattr(workers_env, 'DB_NAME', ''),
+            'USER': os.environ.get('DB_USER') or getattr(workers_env, 'DB_USER', ''),
+            'PASSWORD': os.environ.get('DB_PASSWORD') or getattr(workers_env, 'DB_PASSWORD', ''),
+            'HOST': os.environ.get('DB_HOST') or getattr(workers_env, 'DB_HOST', ''),
+            'PORT': os.environ.get('DB_PORT') or getattr(workers_env, 'DB_PORT', '3306'),
+        }
+    }
 
 
 
