@@ -1,0 +1,153 @@
+lock-version = "1.0"
+created-by = "uv"
+requires-python = ">=3.13.2"
+
+[[packages]]
+name = "amqp"
+version = "5.3.1"
+wheels = [{ url = "https://files.pythonhosted.org/packages/26/99/fc813cd978842c26c82534010ea849eee9ab3a13ea2b74e95cb9c99e747b/amqp-5.3.1-py3-none-any.whl", upload-time = 2024-11-12T19:55:41Z, size = 50944, hashes = { sha256 = "43b3319e1b4e7d1251833a93d672b4af1e40f3d632d479b98661a95f117880a2" } }]
+
+[[packages]]
+name = "asgiref"
+version = "3.8.1"
+wheels = [{ url = "https://files.pythonhosted.org/packages/39/e3/893e8757be2612e6c266d9bb58ad2e3651524b5b40cf56761e985a28b13e/asgiref-3.8.1-py3-none-any.whl", upload-time = 2024-03-22T14:39:34Z, size = 23828, hashes = { sha256 = "3e1e3ecc849832fe52ccf2cb6686b7a55f82bb1d6aee72a58826471390335e47" } }]
+
+[[packages]]
+name = "billiard"
+version = "4.2.1"
+wheels = [{ url = "https://files.pythonhosted.org/packages/30/da/43b15f28fe5f9e027b41c539abc5469052e9d48fd75f8ff094ba2a0ae767/billiard-4.2.1-py3-none-any.whl", upload-time = 2024-09-21T13:40:20Z, size = 86766, hashes = { sha256 = "40b59a4ac8806ba2c2369ea98d876bc6108b051c227baffd928c644d15d8f3cb" } }]
+
+[[packages]]
+name = "celery"
+version = "5.5.3"
+wheels = [{ url = "https://files.pythonhosted.org/packages/c9/af/0dcccc7fdcdf170f9a1585e5e96b6fb0ba1749ef6be8c89a6202284759bd/celery-5.5.3-py3-none-any.whl", upload-time = 2025-06-01T11:08:09Z, size = 438775, hashes = { sha256 = "0b5761a07057acee94694464ca482416b959568904c9dfa41ce8413a7d65d525" } }]
+
+[[packages]]
+name = "click"
+version = "8.2.1"
+wheels = [
+    { url = "https://cdn.jsdelivr.net/pyodide/v0.28.3/full/click-8.2.1-py3-none-any.whl", hashes = { sha256 = "35cd45dc01c3e880bfb0f166a0b2a0ffcf23e14a3227c6527bf42fb7588651c2" } },
+    { url = "https://files.pythonhosted.org/packages/85/32/10bb5764d90a8eee674e9dc6f4db6a0ab47c8c4d0d83c27f7c39ac415a4d/click-8.2.1-py3-none-any.whl", hashes = { sha256 = "61a3265b914e850b85317d0b3109c7f8cd35a670f963866005d6ef1d5175a12b" } },
+]
+
+[[packages]]
+name = "click-didyoumean"
+version = "0.3.1"
+wheels = [{ url = "https://files.pythonhosted.org/packages/1b/5b/974430b5ffdb7a4f1941d13d83c64a0395114503cc357c6b9ae4ce5047ed/click_didyoumean-0.3.1-py3-none-any.whl", upload-time = 2024-03-24T08:22:06Z, size = 3631, hashes = { sha256 = "5c4bb6007cfea5f2fd6583a2fb6701a22a41eb98957e63d0fac41c10e7c3117c" } }]
+
+[[packages]]
+name = "click-plugins"
+version = "1.1.1"
+wheels = [{ url = "https://files.pythonhosted.org/packages/e9/da/824b92d9942f4e472702488857914bdd50f73021efea15b4cad9aca8ecef/click_plugins-1.1.1-py2.py3-none-any.whl", upload-time = 2019-04-04T04:27:03Z, size = 7497, hashes = { sha256 = "5d262006d3222f5057fd81e1623d4443e41dcda5dc815c06b442aa3c02889fc8" } }]
+
+[[packages]]
+name = "click-repl"
+version = "0.3.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/52/40/9d857001228658f0d59e97ebd4c346fe73e138c6de1bce61dc568a57c7f8/click_repl-0.3.0-py3-none-any.whl", upload-time = 2023-06-15T12:43:48Z, size = 10289, hashes = { sha256 = "fb7e06deb8da8de86180a33a9da97ac316751c094c6899382da7feeeeb51b812" } }]
+
+[[packages]]
+name = "colorama"
+version = "0.4.6"
+wheels = [{ url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", upload-time = 2022-10-25T02:36:20Z, size = 25335, hashes = { sha256 = "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6" } }]
+
+[[packages]]
+name = "django"
+version = "5.2.2"
+wheels = [{ url = "https://files.pythonhosted.org/packages/b4/5c/5d00acab6c062b154e5a0f092938ae5a0c698dbc4362b68e23200960f32c/django-5.2.2-py3-none-any.whl", upload-time = 2025-06-04T13:52:33Z, size = 8302562, hashes = { sha256 = "997ef2162d04ead6869551b22cde4e06da1f94cf595f4af3f3d3afeae1f3f6fe" } }]
+
+[[packages]]
+name = "django-environ"
+version = "0.12.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/83/b3/0a3bec4ecbfee960f39b1842c2f91e4754251e0a6ed443db9fe3f666ba8f/django_environ-0.12.0-py2.py3-none-any.whl", upload-time = 2025-01-13T17:03:32Z, size = 19957, hashes = { sha256 = "92fb346a158abda07ffe6eb23135ce92843af06ecf8753f43adf9d2366dcc0ca" } }]
+
+[[packages]]
+name = "django-redis"
+version = "6.0.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/7e/79/055dfcc508cfe9f439d9f453741188d633efa9eab90fc78a67b0ab50b137/django_redis-6.0.0-py3-none-any.whl", upload-time = 2025-06-17T18:15:34Z, size = 33687, hashes = { sha256 = "20bf0063a8abee567eb5f77f375143c32810c8700c0674ced34737f8de4e36c0" } }]
+
+[[packages]]
+name = "django-widget-tweaks"
+version = "1.5.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/46/6a/6cb6deb5c38b785c77c3ba66f53051eada49205979c407323eb666930915/django_widget_tweaks-1.5.0-py3-none-any.whl", upload-time = 2023-08-25T15:29:05Z, size = 8960, hashes = { sha256 = "a41b7b2f05bd44d673d11ebd6c09a96f1d013ee98121cb98c384fe84e33b881e" } }]
+
+[[packages]]
+name = "kombu"
+version = "5.5.4"
+wheels = [{ url = "https://files.pythonhosted.org/packages/ef/70/a07dcf4f62598c8ad579df241af55ced65bed76e42e45d3c368a6d82dbc1/kombu-5.5.4-py3-none-any.whl", upload-time = 2025-06-01T10:19:20Z, size = 210034, hashes = { sha256 = "a12ed0557c238897d8e518f1d1fdf84bd1516c5e305af2dacd85c2015115feb8" } }]
+
+[[packages]]
+name = "packaging"
+version = "25.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl", upload-time = 2025-04-19T11:48:57Z, size = 66469, hashes = { sha256 = "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484" } }]
+
+[[packages]]
+name = "pillow"
+version = "11.3.0"
+wheels = [{ url = "https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pillow-11.3.0-cp313-cp313-pyodide_2025_0_wasm32.whl", hashes = { sha256 = "52984112ca668d60291a7868011a04d66baf526d27e5eaef0a8a16e7ef22ab6c" } }]
+
+[[packages]]
+name = "prompt-toolkit"
+version = "3.0.51"
+wheels = [{ url = "https://files.pythonhosted.org/packages/ce/4f/5249960887b1fbe561d9ff265496d170b55a735b76724f10ef19f9e40716/prompt_toolkit-3.0.51-py3-none-any.whl", upload-time = 2025-04-15T09:18:44Z, size = 387810, hashes = { sha256 = "52742911fde84e2d423e2f9a4cf1de7d7ac4e51958f648d9540e0fb8db077b07" } }]
+
+[[packages]]
+name = "pymysql"
+version = "1.1.1"
+wheels = [{ url = "https://files.pythonhosted.org/packages/0c/94/e4181a1f6286f545507528c78016e00065ea913276888db2262507693ce5/PyMySQL-1.1.1-py3-none-any.whl", upload-time = 2024-05-21T11:03:41Z, size = 44972, hashes = { sha256 = "4de15da4c61dc132f4fb9ab763063e693d521a80fd0e87943b9a453dd4c19d6c" } }]
+
+[[packages]]
+name = "pypdf2"
+version = "3.0.1"
+wheels = [{ url = "https://files.pythonhosted.org/packages/8e/5e/c86a5643653825d3c913719e788e41386bee415c2b87b4f955432f2de6b2/pypdf2-3.0.1-py3-none-any.whl", upload-time = 2022-12-31T10:36:10Z, size = 232572, hashes = { sha256 = "d16e4205cfee272fbdc0568b68d82be796540b1537508cef59388f839c191928" } }]
+
+[[packages]]
+name = "python-dateutil"
+version = "2.9.0.post0"
+wheels = [
+    { url = "https://cdn.jsdelivr.net/pyodide/v0.28.3/full/python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hashes = { sha256 = "26b50ce706a17abdde09dbb95745a44f9320dfdb99e950c52b1a62a3d99e452c" } },
+    { url = "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hashes = { sha256 = "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427" } },
+]
+
+[[packages]]
+name = "redis"
+version = "6.2.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/13/67/e60968d3b0e077495a8fee89cf3f2373db98e528288a48f1ee44967f6e8c/redis-6.2.0-py3-none-any.whl", upload-time = 2025-05-28T05:01:16Z, size = 278659, hashes = { sha256 = "c8ddf316ee0aab65f04a11229e94a64b2618451dab7a67cb2f77eb799d872d5e" } }]
+
+[[packages]]
+name = "six"
+version = "1.17.0"
+wheels = [
+    { url = "https://cdn.jsdelivr.net/pyodide/v0.28.3/full/six-1.17.0-py2.py3-none-any.whl", hashes = { sha256 = "618e0357f1724d937c20b75d691f0ba9e404de2701084e3c4f35995cfb879665" } },
+    { url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl", hashes = { sha256 = "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274" } },
+]
+
+[[packages]]
+name = "sqlparse"
+version = "0.5.3"
+wheels = [{ url = "https://files.pythonhosted.org/packages/a9/5c/bfd6bd0bf979426d405cc6e71eceb8701b148b16c21d2dc3c261efc61c7b/sqlparse-0.5.3-py3-none-any.whl", upload-time = 2024-12-10T12:05:27Z, size = 44415, hashes = { sha256 = "cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca" } }]
+
+[[packages]]
+name = "tzdata"
+version = "2025.2"
+wheels = [
+    { url = "https://cdn.jsdelivr.net/pyodide/v0.28.3/full/tzdata-2025.2-py2.py3-none-any.whl", hashes = { sha256 = "2106b3c5034e0c2ecc1c320f167a3c69f544493f113a3a6ca01df5b1d9fcf5d3" } },
+    { url = "https://files.pythonhosted.org/packages/5c/23/c7abc0ca0a1526a0774eca151daeb8de62ec457e77262b66b359c3c7679e/tzdata-2025.2-py2.py3-none-any.whl", hashes = { sha256 = "1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8" } },
+]
+
+[[packages]]
+name = "vine"
+version = "5.1.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/03/ff/7c0c86c43b3cbb927e0ccc0255cb4057ceba4799cd44ae95174ce8e8b5b2/vine-5.1.0-py3-none-any.whl", upload-time = 2023-11-05T08:46:51Z, size = 9636, hashes = { sha256 = "40fdf3c48b2cfe1c38a49e9ae2da6fda88e4794c810050a728bd7413811fb1dc" } }]
+
+[[packages]]
+name = "wcwidth"
+version = "0.2.13"
+wheels = [
+    { url = "https://cdn.jsdelivr.net/pyodide/v0.28.3/full/wcwidth-0.2.13-py2.py3-none-any.whl", hashes = { sha256 = "d4e7f2f640c5f06bbff0f9f60383869a8c919b01668a6dc4429dd7f75ee19418" } },
+    { url = "https://files.pythonhosted.org/packages/fd/84/fd2ba7aafacbad3c4201d395674fc6348826569da3c0937e75505ead3528/wcwidth-0.2.13-py2.py3-none-any.whl", hashes = { sha256 = "3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859" } },
+]
+
+[[packages]]
+name = "workers-runtime-sdk"
+version = "1.9.0"
+wheels = [{ url = "https://files.pythonhosted.org/packages/94/3d/053deb135d4db2ef6f6c3ccdeb86d7829de3c271f7ae02cec73da8f65891/workers_runtime_sdk-1.9.0-py3-none-any.whl", upload-time = 2026-09-18T21:08:37Z, size = 38585, hashes = { sha256 = "36209f94984686264db4e1fd410d51ac3460f2a2ab3cc29869699b975e1e1331" } }]
