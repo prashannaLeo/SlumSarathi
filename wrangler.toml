@@ -5,6 +5,11 @@ compatibility_flags = ["python_workers"]
 
 find_additional_modules = true
 
+[[rules]]
+type = "Data"
+globs = ["**/*.html", "**/*.txt"]
+fallthrough = true
+
 [[d1_databases]]
 binding = "DB"
 database_name = "slumsarathi-db"
