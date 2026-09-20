@@ -3,6 +3,7 @@ import os
 import sys
 from pathlib import Path
 
+os.environ.setdefault("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 try:
     from workers import env as workers_env
 except Exception:
