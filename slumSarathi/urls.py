@@ -9,16 +9,10 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 
-try:
-    from workers import env as workers_env
-except Exception:
-    workers_env = None
-
 
 def run_migrations_view(request):
     token = request.GET.get('token')
-    expected = os.environ.get('MIGRATE_TOKEN') or getattr(workers_env, 'MIGRATE_TOKEN', 'change-me-please')
-    if token != expected:
+    if token != os.environ.get('MIGRATE_TOKEN', 'change-me-please'):
         return HttpResponseForbidden("Forbidden")
     out = io.StringIO()
     try:
