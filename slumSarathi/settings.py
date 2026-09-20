@@ -84,9 +84,6 @@ TEMPLATES = [
     },
 ]
 
-# Media files (for avatars)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 WSGI_APPLICATION = 'wsgi.application'
 
@@ -155,8 +152,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'https://slumsarathi-static.pages.dev/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = []
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+if workers_env is not None:
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') or getattr(workers_env, 'AWS_ACCESS_KEY_ID', '')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') or getattr(workers_env, 'AWS_SECRET_ACCESS_KEY', '')
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME') or getattr(workers_env, 'AWS_STORAGE_BUCKET_NAME', 'slumsarathi')
+    AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME') or getattr(workers_env, 'AWS_S3_REGION_NAME', 'us-east-005')
+    AWS_S3_ENDPOINT_URL = os.environ.get('AWS_S3_ENDPOINT_URL') or getattr(workers_env, 'AWS_S3_ENDPOINT_URL', 'https://s3.us-east-005.backblazeb2.com')
+    AWS_QUERYSTRING_AUTH = False
+    AWS_S3_USE_SSL = True
+    MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL.replace("https://", "")}/'
+else:
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
