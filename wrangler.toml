@@ -1,5 +1,5 @@
 name = "slumsarathi"
-main = "slumSarathi/asgi.py"
+main = "slumSarathi/wsgi.py"
 compatibility_date = "2026-07-17"
 compatibility_flags = ["python_workers"]
 
