@@ -4,6 +4,11 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 
+try:
+    from workers import env as workers_env
+except Exception:
+    workers_env = None
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="homepage.html"), name='homepage'),
@@ -11,4 +16,7 @@ urlpatterns = [
     path('services/', include('services.urls')),
     path('resources/', include('resources.urls')),
     path('events/', include('events.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if workers_env is None:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
