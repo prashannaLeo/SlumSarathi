@@ -13,3 +13,8 @@ __pycache__/
 *.pyc
 uv.lock
 pylock.toml
+slumSarathi/accounts/
+slumSarathi/services/
+slumSarathi/resources/
+slumSarathi/events/
+slumSarathi/templates/
